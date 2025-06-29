@@ -1,4 +1,4 @@
-Module.register("MMM-CountDown",{
+Module.register("MMM-Countdown",{
 	// Default module config.
 	defaults: {
 		event: "New Millenium:",
