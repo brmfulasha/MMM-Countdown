@@ -29,7 +29,7 @@ Module.register("MMM-Countdown",{
 		var textWrapper = document.createElement("div");
 
 		textWrapper.className = "align-left week dimmed medium";
-		timeWrapper.className = "time bright medium light">
+		timeWrapper.className = "time bright medium light";
 		textWrapper.innerHTML=this.config.event;
 
 		var today = new Date(Date.now());
