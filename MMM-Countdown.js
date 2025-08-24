@@ -34,6 +34,7 @@ Module.register("MMM-Countdown",{
 
 		var today = new Date(Date.now());
 		var target = new Date(this.config.date);
+
 		var timeDiff = target - today;
 
 		// Set days, hours, minutes and seconds
