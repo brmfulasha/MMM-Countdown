@@ -42,18 +42,18 @@ Module.register("MMM-Countdown",{
 		var diffHours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 		var diffMinutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 		var diffSeconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-		
-		// Build the output
-		var hrs = '';
-		var mins = '';
-		var secs = '';
-		var days = diffDays + this.config.daysLabel;
 
-		if(this.config.showHours == true) hrs = diffHours + this.config.hoursLabel;
-		if(this.config.showMinutes == true) mins = diffMinutes + this.config.minutesLabel;
-		if(this.config.showSeconds == true) secs = diffSeconds + this.config.secondsLabel;
+		var timeDisplay = '';
 
-		timeWrapper.innerHTML = days + hrs + mins + secs;
+		if (diffDays >= 1) {
+			// More than 24 hours left: show days only
+			timeDisplay = diffDays + this.config.daysLabel;
+		} else {
+			// Less than 24 hours: show hours and minutes only
+			timeDisplay = diffHours + this.config.hoursLabel + diffMinutes + this.config.minutesLabel;
+		}
+
+		timeWrapper.innerHTML = timeDisplay;
 
 		wrapper.appendChild(textWrapper);
 		wrapper.appendChild(timeWrapper);
